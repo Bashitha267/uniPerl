@@ -15,6 +15,8 @@ print scalar@Experiencevalues;
 
 $Experience{"oracle"}=2;
 $Experience{"Java Script"}=3;
-print"\n";
-print %Experience;
-
+@valuess=keys%Experience;
+foreach$element(@valuess){
+	print"$element\n";
+}
+delete $Experience{"oracle"};
