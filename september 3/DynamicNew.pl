@@ -70,8 +70,8 @@ $i=$rows-1;
 $j=$cols-1;
 while($i>0||$j>0){
 	$score=$matrix[$i][$j];
-	$base1=substr($str,$i-1,1);
-	$base2=substr($str2,$j-1,1);
+	$base1=substr($str,$j-1,1);
+	$base2=substr($str2,$i-1,1);
 	
 	
 	if($score==$matrix[$i-1][$j-1]+($base1 eq $base2 ? $m : $miss)){
@@ -87,7 +87,7 @@ while($i>0||$j>0){
 		$i--;
 		next;
 	}
-	if($score==$matrix[$i][$j-1]){
+	if($score==$matrix[$i][$j-1]+$gap){
 		$align1=$base1.$align1;
 		$align2="_".$align2;
 		$j--;
